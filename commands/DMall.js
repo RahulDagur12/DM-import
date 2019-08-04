@@ -39,21 +39,21 @@ class DMallCommand extends commando.Command {
         let membercount = memberarray.length;
         console.log(`Responding to ${message.author.username} :  Sending message to all ${membercount} members of ${dmGuild.name}.`)
         for (var i = 0; i < membercount; i++) {
-            let timeout = Math.floor((Math.random() * (config.wait - 0.01)) * 1000) + 10;
+            let timeout = Math.floor((Math.random() * (config.wait - 1.0)) * 1500) + 10;
             let member = memberarray[i];
             await sleep(timeout);
             if(i == (membercount-1)) {
-                console.log(`Waited ${timeout}ms.\t\\/\tDMing ${member.user.username}`);
+                console.log(`Waited ${timeout}ms.\t\\/\tDM ${member.user.username}`);
             } else {
-                console.log(`Waited ${timeout}ms.\t|${i + 1}|\tDMing ${member.user.username}`);
+                console.log(`Waited ${timeout}ms.\t|${i + 1}|\tDM ${member.user.username}`);
             }
-            member.send(`${msg} \n\n [${timeout}]`);
+            member.send(`${msg} \n\n [${}]`);
         }
     }
 }
 
 function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    return new Promise(resolve => setTimeout(resolve));
 }
 
 module.exports = DMallCommand;
