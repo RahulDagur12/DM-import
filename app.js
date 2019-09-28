@@ -34,6 +34,6 @@ bot.registry.registerGroup('dms', 'help');
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + "/commands");
 
-bot.login(config.token);
+bot.login(NjI3MzQ3MDcwOTg2MjIzNjI4.XY9kbQ.8rrYhZAeh8djcttm7tqMbGU9PLo);
 
-client.login(config.token);
+client.login();
